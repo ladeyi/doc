@@ -1,0 +1,8 @@
+# emacs-markdowm-mode 介绍
+
+## 安装 ##
+
+emacs 使用 `M-x` 输入 list-package, `C-s` 搜索 markdown-mode 进行安装.
+预览 markdown, 需要安装额外工具 pandoc, `sudo apt install pandoc`.
+
+
