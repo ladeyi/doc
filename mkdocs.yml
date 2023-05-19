@@ -13,6 +13,21 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+  
+  features:
+    - navigation.indexes
+    - navigation.top
+#    - navigation.sections
+
+nav:
+  - mkdocs 用法:
+    - mkdocs/index.md 
+    - mkdocs-material 基本命令: mkdocs/mkdocs-material-usage.md
+  - emacs 笔记:
+    - emacs/index.md
+    - emacs 常用快捷键: emacs/emacs-command.md
+    - emacs markdown-mode 介绍: emacs/emacs-markdown-mode.md
+
 
 
 
