@@ -9,15 +9,13 @@
       
       
       
-        <link rel="prev" href="../emacs-command/">
-      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
     
     
       
-        <title>emacs markdown-mode 介绍 - 艾尔海森的博客</title>
+        <title>emacs 插件安装相关文档 - 艾尔海森的博客</title>
       
     
     
@@ -69,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#emacs-markdowm-mode" class="md-skip">
+        <a href="#emacs" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              emacs markdown-mode 介绍
+              emacs 插件安装相关文档
             
           </span>
         </div>
@@ -279,16 +277,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
       
       
         
@@ -313,7 +309,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           emacs 笔记
@@ -340,59 +336,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          emacs markdown-mode 介绍
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../emacs-markdown-mode/" class="md-nav__link">
         emacs markdown-mode 介绍
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    安装配置
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    常用命令
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -432,14 +380,7 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    安装配置
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    常用命令
+    设置插件源
   </a>
   
 </li>
@@ -459,61 +400,25 @@
                   
 
 
-<h1 id="emacs-markdowm-mode">emacs-markdowm-mode 介绍</h1>
-<h2 id="_1">安装配置</h2>
-<p>emacs 使用 <code>M-x</code> 输入 list-package, <code>C-s</code> 搜索 markdown-mode 进行安装.
-预览 markdown, 需要安装额外工具 pandoc, <code>sudo apt install pandoc</code>.</p>
-<p>在 emacs 的配置文件 <code>init.el</code> 中配置上：</p>
-<pre><code class="language-lisp">(setq markdown-command &quot;pandoc&quot;)
+<h1 id="emacs">emacs 插件安装相关文档</h1>
+<h2 id="_1">设置插件源</h2>
+<p>MELPA官网源</p>
+<pre><code class="language-lisp">(require 'package)
+(add-to-list 'package-archives '(&quot;melpa&quot; . &quot;https://melpa.org/packages/&quot;) t)
 </code></pre>
-<h2 id="_2">常用命令</h2>
-<ul>
-<li>Links and Images: <code>C-c C-l</code> and <code>C-c C-i</code></li>
-<li>Text Styles: <code>C-c C-s</code></li>
-</ul>
-<p><code>C-c C-s q</code> 设置引用块</p>
-<p><code>C-c C-s p</code> and <code>C-c C-s C</code> 设置代码块</p>
-<ul>
-<li>Headings: <code>C-c C-s</code></li>
-</ul>
-<p><code>C-c C-s h</code> 根据上下文设置标题</p>
-<blockquote>
-<p>如果在前面加 <code>C-u</code> 设置大一号标题, <code>C-u C-u</code> 设置小一号标题</p>
-</blockquote>
-<p><code>C-c C-s 1</code> - <code>C-c C-s 6</code> 设置一到六号标题</p>
-<p><code>C-c C-s ! C-c C-s @</code> 设置下划线标题, <code>C-c C-k</code> 撤销, <code>C-y</code> 重新把标题文本粘贴回去</p>
-<ul>
-<li>Horizontal Rules: <code>C-c C-s -</code></li>
-</ul>
-<blockquote>
-<p>如果在前面加 <code>C-u N</code>, 则可以选择插入的水平线的样式</p>
-</blockquote>
-<ul>
-<li>
-<p>Footnotes: <code>C-c C-s f</code></p>
-</li>
-<li>
-<p>Wiki Links: <code>C-c C-s w</code></p>
-</li>
-<li>
-<p>Markdown and Maintenance Commands: C-c C-c</p>
-</li>
-</ul>
-<p><code>C-c C-c m</code>: markdown-command &gt; <em>markdown-output</em> buffer.</p>
-<p><code>C-c C-c p</code>: markdown-command &gt; temporary file &gt; browser.</p>
-<p><code>C-c C-c e</code>: markdown-command &gt; basename.html.</p>
-<p><code>C-c C-c v</code>: markdown-command &gt; basename.html &gt; browser.</p>
-<p><code>C-c C-c w</code>: markdown-command &gt; kill ring.</p>
-<p><code>C-c C-c o</code>: markdown-open-command.</p>
-<p><code>C-c C-c l</code>: markdown-live-preview-mode &gt; <em>eww</em> buffer.</p>
-<ul>
-<li>
-<p>Completion: <code>C-c C-]</code></p>
-</li>
-<li>
-<p>table: <code>C-c C-s t</code></p>
-</li>
-</ul>
+<p>MELPA腾讯源</p>
+<pre><code class="language-lisp">(require 'package)
+(setq package-archives '((&quot;gnu&quot;   . &quot;http://mirrors.cloud.tencent.com/elpa/gnu/&quot;)
+                         (&quot;melpa&quot; . &quot;http://mirrors.cloud.tencent.com/elpa/melpa/&quot;)))
+</code></pre>
+<p>设置代理</p>
+<pre><code class="language-lisp">(setq gnutls-algorithm-priority &quot;NORMAL:-VERS-TLS1.3&quot;) ; 不加这一句可能有问题，建议读者尝试一下
+(setq url-proxy-services '((&quot;no_proxy&quot; . &quot;^\\(192\\.168\\..*\\)&quot;)
+                           (&quot;http&quot; . &quot;&lt;代理 IP&gt;:&lt;代理端口号&gt;&quot;)
+                           (&quot;https&quot; . &quot;&lt;代理 IP&gt;:&lt;代理端口号&gt;&quot;)))
+</code></pre>
+<p>安装插件</p>
+<p><code>M-x</code> 然后输入 <code>package-list-packages</code> 就可以安装需要的插件</p>
 
 
 
